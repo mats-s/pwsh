@@ -25,9 +25,9 @@ Expand-Archive .\mylgpo-13012022.zip -DestinationPath mylgpo
 #pwsh theme:
 #For å se de forskjellige themesa man kan velge mellom > https://github.com/lukesampson/concfg/tree/master/preset_examples 
 cd C:\Users\Admin
+pwsh.exe
 Invoke-WebRequest "https://codeload.github.com/lukesampson/concfg/zip/refs/heads/master" -OutFile ".\master.zip"
 Expand-Archive .\master.zip -DestinationPath concfg
 .\concfg\concfg-master\bin\concfg.ps1 import dracula -y
-pwsh.exe
 
 Start-Process "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
