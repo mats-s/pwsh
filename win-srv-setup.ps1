@@ -1,6 +1,3 @@
-#URL template: 
-https://gitlab.com/erikhje/heat-mono/-/raw/master/single_windows_server.yaml
-
 #Språk:
 Get-WinUserLanguageList
 Set-WinUserLanguageList -LanguageList nb-NO
