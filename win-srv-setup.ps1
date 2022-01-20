@@ -30,3 +30,5 @@ cd C:\Users\Admin
 Invoke-WebRequest "https://codeload.github.com/lukesampson/concfg/zip/refs/heads/master" -OutFile ".\master.zip"
 Expand-Archive .\master.zip -DestinationPath concfg
 .\concfg\concfg-master\bin\concfg.ps1 import dracula -y
+
+Start-Process "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
