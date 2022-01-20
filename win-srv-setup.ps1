@@ -22,11 +22,8 @@ Invoke-WebRequest "https://folk.ntnu.no/erikhje/mylgpo-13012022.zip" -OutFile ".
 Expand-Archive .\mylgpo-13012022.zip -DestinationPath mylgpo
 .\LGPO.exe /g 'C:\Users\Admin\LGPO\LGPO_30\mylgpo\'
 Invoke-WebRequest "https://github.com/mats-s/quick-setup/blob/main/mats-info.bgi" -OutFile "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi"
-$WshShell = New-Object -comObject WScript.Shell
-$Shortcut = $WshShell.CreateShortcut("C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Bginfo.lnk")
-$Shortcut.TargetPath = "C:\ProgramData\chocolatey\lib\sysinternals\tools\Bginfo.exe"
-$Shortcut.Arguments = "/silent /nocliprompt /timer:0"
-$Shortcut.Save()
+C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0
+echo "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0" > "C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\mats-info.bat"
 
 #pwsh.exe theme:
 #For å se de forskjellige themesa man kan velge mellom > https://github.com/lukesampson/concfg/tree/master/preset_examples 
