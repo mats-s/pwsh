@@ -1,7 +1,6 @@
 #cd
 cd C:\Users\Admin
 
-
 #Språk:
 Get-WinUserLanguageList
 Set-WinUserLanguageList -LanguageList nb-NO
