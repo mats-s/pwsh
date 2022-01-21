@@ -15,13 +15,13 @@ choco install -y powershell-core
 choco install -y sysinternals
 
 #BgInfo setup:
+Invoke-WebRequest "https://github.com/mats-s/quick-setup/blob/main/mats-info.bgi" -OutFile "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi"
 Invoke-WebRequest "https://download.microsoft.com/download/8/5/C/85C25433-A1B0-4FFA-9429-7E023E7DA8D8/LGPO.zip" -OutFile ".\LGPO.zip"  
 Expand-Archive .\LGPO.zip -DestinationPath LGPO
 cd .\LGPO\LGPO_30
 Invoke-WebRequest "https://folk.ntnu.no/erikhje/mylgpo-13012022.zip" -OutFile ".\mylgpo-13012022.zip"  
 Expand-Archive .\mylgpo-13012022.zip -DestinationPath mylgpo
 .\LGPO.exe /g 'C:\Users\Admin\LGPO\LGPO_30\mylgpo\'
-Invoke-WebRequest "https://github.com/mats-s/quick-setup/blob/main/mats-info.bgi" -OutFile "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi"
 C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0
 echo "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0" > "C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\mats-info.bat"
 
