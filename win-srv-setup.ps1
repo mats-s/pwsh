@@ -22,15 +22,15 @@ cd .\LGPO\LGPO_30
 Invoke-WebRequest "https://folk.ntnu.no/erikhje/mylgpo-13012022.zip" -OutFile ".\mylgpo-13012022.zip"  
 Expand-Archive .\mylgpo-13012022.zip -DestinationPath mylgpo
 .\LGPO.exe /g 'C:\Users\Admin\LGPO\LGPO_30\mylgpo\'
-C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0
-echo "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0" > "C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\mats-info.bat"
+C:\ProgramData\chocolatey\lib\sysinternals\tools\matsinfo.bgi /silent /nocliprompt /timer:0
+echo "C:\ProgramData\chocolatey\lib\sysinternals\tools\mats-info.bgi /silent /nocliprompt /timer:0" > "C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\matsinfo.bat"
 
 #pwsh.exe theme:
 #For å se de forskjellige themesa man kan velge mellom > https://github.com/lukesampson/concfg/tree/master/preset_examples 
 cd C:\Users\Admin
 Invoke-WebRequest "https://codeload.github.com/lukesampson/concfg/zip/refs/heads/master" -OutFile ".\master.zip"
 Expand-Archive .\master.zip -DestinationPath concfg
-.\concfg\concfg-master\bin\concfg.ps1 import dracula -y
+.\concfg\concfg-master\bin\concfg.ps1 import atelier-lakeside -y
 pwsh.exe
 
 #Litt moro:
