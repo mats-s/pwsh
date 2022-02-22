@@ -32,6 +32,3 @@ Invoke-WebRequest "https://codeload.github.com/lukesampson/concfg/zip/refs/heads
 Expand-Archive .\master.zip -DestinationPath concfg
 .\concfg\concfg-master\bin\concfg.ps1 import atelier-lakeside -y
 pwsh.exe
-
-#Litt moro:
-Start-Process "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
