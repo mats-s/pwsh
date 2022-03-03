@@ -1,0 +1,3 @@
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/mats-s/pwsh/main/code/dc-init.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/mats-s/pwsh/main/code/cl-init-join.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/mats-s/pwsh/main/code/dc-main.ps1'))
