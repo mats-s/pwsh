@@ -133,7 +133,7 @@ Write-Output "GivenName;UserName;SurName;UserPrincipalName;DisplayName;Password;
 
 foreach ($i in 0..99) {
   $GivenName         = $FirstName[$fnidx[$i]]
-  $UserName          = $GivenName[0].ToLower() + $SurName.ToLower()
+  $UserName          = $GivenName[0] + $SurName
   $SurName           = $LastName[$lnidx[$i]]
   $UserPrincipalName = $UserName + '@' + 'enterprise.uss'
   $DisplayName       = $GivenName + ' ' + $SurName
