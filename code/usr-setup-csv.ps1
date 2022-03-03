@@ -137,7 +137,8 @@ foreach ($i in 0..99) {
   $SurName           = $LastName[$lnidx[$i]]
   $UserPrincipalName = $UserName + '@' + 'enterprise.uss'
   $DisplayName       = $GivenName + ' ' + $SurName
-  $Password          = 'A' + -join ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRSTUVWXYZ0123456789!"#$%&()*+,-./:<=>?@[\]_{|}'.ToCharArray() | Get-Random -Count 16)
+  $Password          = (-join (-join ('ABCDEFGHIJKLMNOPRSTUVWXYZ' | Get-Random -Count 1) + -join ('0123456789' | Get-Random -Count 1) +
+  -join ('abcdefghijklmnopqrstuvwxyz' | Get-Random -Count 1) + -join ('!"#$%&()*+,-./:<=>?@[\]_{|}' | Get-Random -Count 1)).ToCharArray() | Get-Random -Count 16) 
   $Department        = ($OrgUnits[$ouidx[$i]] -split '[=,]')[1]
   $Path              = $OrgUnits[$ouidx[$i]] + ',' + "dc=enterprise,dc=uss"
   Write-Output "$GivenName;$UserName;$SurName;$UserPrincipalName;$DisplayName;$Password;$Department;$Path" >> enterpriseussusers.csv
