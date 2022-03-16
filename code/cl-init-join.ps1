@@ -1,24 +1,14 @@
-# Oppsett av cl1, mgr og srv1
-# Ma utfores pa begge maskinene.
-
-Set-Location C:\Users\Admin
+# Oppsett av klienter, altsaa cl1 og mgr i vaart tilfelle.
 Get-WinUserLanguageList
 Set-WinUserLanguageList -LanguageList nb-NO
+Set-TimeZone -Id "W. Europe Standard Time" -PassThru
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sCountry -Value "Norway";
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sLongDate -Value "dddd, d. MMMM yyyy";
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sShortDate -Value "dd.MM.yyyy";
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sShortTime -Value "HH:mm";
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sTimeFormat -Value "HH:mm:ss";
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sYearMonth -Value "MMMM yyyy";
+Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iFirstDayOfWeek -Value 0;
 
-
-# Setter domene for aktuell bruker
-# Finn en god losning på IP via new-PSsession (fra dc1 til srv1,cl1,mgr)
-#$ip = Read-Host -Prompt 'Tast inn IP-addresse til domenekontroller'
-#Get-NetAdapter | Set-DnsClientServerAddress -ServerAddresses $ip
-#$cred = Get-Credential -UserName 'enterprise\Administrator' -Message 'Cred'
-#Add-Computer -Credential $cred -DomainName enterprise.uss -PassThru -Verbose
-#Restart-Computer
-
-# Apner for Enter-PSSession sånn at vi kan gjøre mest mulig fra domenekontroller
-New-ItemProperty -Name LocalAccountTokenFilterPolicy `
-  -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System `
-  -PropertyType DWord -Value 1
-
-  # Gjor Get-SMBShare på DC1    
-
-
+# Aapner for New-PSSession sann at vi kan gjore mest mulig fra domenekontroller
+Enable-PSRemoting -Force -SkipNetworkProfileCheck
